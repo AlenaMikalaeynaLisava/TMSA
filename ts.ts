@@ -20,17 +20,17 @@ let myAgeInSeconds = 34 * dayITear * hInDay * minInH * secInMin;
 
 // Task 3
 
-    let count : number = 42;
-    let userName : string = '42';
-    let strCount1 : string;
-    let strCount2 : string;
-    let numName1 : number;
-    let numName2 : number;
+let count : number = 42;
+let userName : string = '42';
+let strCount1 : string;
+let strCount2 : string;
+let numName1 : number;
+let numName2 : number;
 
-    strCount1 = "" + count;
-    strCount2 = count.toString();
-    numName1 = +userName;
-    numName2 = parseInt(userName);
+strCount1 = "" + count;
+strCount2 = count.toString();
+numName1 = +userName;
+numName2 = parseInt(userName);
 
  
 // Task 4
@@ -106,6 +106,7 @@ shouldGoToWork = true;
 
 
 // Task 11
+
 const readline = require("readline-sync");
 const num11 = readline.question("Type a number:");
 if(!(num11 % 5) && !(num11 % 3)){
@@ -118,8 +119,8 @@ if(!(num11 % 5) && !(num11 % 3)){
 
 
 // Task 12
-const readline12 = require("readline-sync");
-const age12 = readline12.question("Type your age:");
+
+const age12 = readline.question("Type your age:");
 
 if(age12 >= 18){
  console.log("Попей пивка");
@@ -133,8 +134,7 @@ if(age12 >= 18){
 
 // Task 13
 
-const readline13 = require("readline-sync");
-const worldSide12 = readline12.question("Type a world side ");
+const worldSide12 = readline.question("Type a world side ");
 
 switch(worldSide12){
     case "south":
@@ -156,6 +156,7 @@ switch(worldSide12){
 //ADVANCED level
 
 // Task 1
+
 let a111 : number | string = 4;
 let b111 : number = 3;
 
@@ -165,18 +166,18 @@ a111 = (parseFloat(a111) * 10) %4;
 
 
 // Task 2
-const readline22 = require("readline-sync");
-const result22 = readline22.question("Type a result ");
-const minus = readline22.question("How much to subtract? ");
-const plus = readline22.question("How much to sum? ");
-const multiply = readline22.question("How much to multiply? ");
-const divide = readline22.question("How much to divide? ");
+
+const result22 = readline.question("Type a result ");
+const minus = readline.question("How much to subtract? ");
+const plus = readline.question("How much to sum? ");
+const multiply = readline.question("How much to multiply? ");
+const divide = readline.question("How much to divide? ");
 console.log(`((((${result22} - ${minus}) + ${plus})) * ${multiply}) / ${divide} = ${(+(+result22 - +minus + +plus) * +multiply / +divide)}`)
 
 
 // Task 3
-const readline333 = require("readline-sync");
-const times = readline333.question("Type a result ");
+
+const times = readline.question("Enter the final number of stars ");
 
 let i = 0;
 while (i<times) {
