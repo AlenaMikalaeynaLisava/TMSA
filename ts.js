@@ -1,75 +1,75 @@
 // Task 1
-let firstV = 2;
-let secondV = 2;
-let thirdV = 2;
-const res = firstV + secondV + thirdV;
+var firstV = 2;
+var secondV = 2;
+var thirdV = 2;
+var res = firstV + secondV + thirdV;
 console.log(res);
 // Task 2
-let secInMin = 60;
-let minInH = 60;
-let hInDay = 24;
-let dayITear = 365;
-let myAgeInSeconds = 34 * dayITear * hInDay * minInH * secInMin;
+var secInMin = 60;
+var minInH = 60;
+var hInDay = 24;
+var dayITear = 365;
+var myAgeInSeconds = 34 * dayITear * hInDay * minInH * secInMin;
 // Task 3
-let count = 42;
-let userName = '42';
-let strCount1;
-let strCount2;
-let numName1;
-let numName2;
+var count = 42;
+var userName = '42';
+var strCount1;
+var strCount2;
+var numName1;
+var numName2;
 strCount1 = "" + count;
 strCount2 = count.toString();
 numName1 = +userName;
 numName2 = parseInt(userName);
 // Task 4
-let a = 1;
-let b = 2;
-let c = "белых медведей";
-let result = "" + a + b + " " + c;
+var a = 1;
+var b = 2;
+var c = "белых медведей";
+var result = "" + a + b + " " + c;
 console.log(result);
 // Task 5
-const firstW = "доступ";
-const secondW = "морпех";
-const thirdW = "наледь";
-const fourthW = "попрек";
-const fifthW = "рубило";
-let lengthWords = (firstW + secondW + thirdW + fourthW + fifthW).length;
+var firstW = "доступ";
+var secondW = "морпех";
+var thirdW = "наледь";
+var fourthW = "попрек";
+var fifthW = "рубило";
+var lengthWords = (firstW + secondW + thirdW + fourthW + fifthW).length;
 // Task 6
-const first = "string";
-const second = 12;
-const third = true;
-console.log(`first have type: ${typeof (first)}`);
-console.log(`second have type: ${typeof (second)}`);
-console.log(`third have type: ${typeof (third)}`);
+var first = "string";
+var second = 12;
+var third = true;
+console.log("first have type: ".concat(typeof (first)));
+console.log("second have type: ".concat(typeof (second)));
+console.log("third have type: ".concat(typeof (third)));
 // Task 7
-const a7 = "true";
-const b7 = false;
-const c7 = 17;
-const d7 = undefined;
-const e7 = null;
+var a7 = "true";
+var b7 = false;
+var c7 = 17;
+var d7 = undefined;
+var e7 = null;
 console.log(typeof (a7) + "\n" + typeof (b7) + "\n" + typeof (c7) + "\n" + typeof (d7) + "\n" + typeof (e7));
 // Task 8
-let a8 = 15;
-let b8 = 20;
+var a8 = 15;
+var b8 = 20;
 a8 > b8 ? console.log(a8) : console.log(b8);
 // Task 9
-for (let i = 1; i <= 20; i++) {
-    if (!(i % 3)) {
-        console.log(i);
+for (var i_1 = 1; i_1 <= 20; i_1++) {
+    if (!(i_1 % 3)) {
+        console.log(i_1);
     }
 }
 // Task 10
-let key = true;
-let documents = true;
-let pen = true;
-let apple = false;
-let orange = true;
-let shouldGoToWork;
+var key = true;
+var documents = true;
+var pen = true;
+var apple = false;
+var orange = true;
+var shouldGoToWork;
 if (key && documents && pen && (apple || orange))
     shouldGoToWork = true;
 // Task 11
-const readline = require("readline-sync");
-const num11 = readline.question("Type a number:");
+var readline = require("readline-sync");
+var num11 = readline.question("Type a number:");
 if (!(num11 % 5) && !(num11 % 3)) {
     console.log("FizBuz");
 }
@@ -80,7 +80,7 @@ else if (!(num11 % 3)) {
     console.log("Biz");
 }
 // Task 12
-const age12 = readline.question("Type your age:");
+var age12 = readline.question("Type your age:");
 if (age12 >= 18) {
     console.log("Попей пивка");
 }
@@ -91,7 +91,7 @@ else {
     }
 }
 // Task 13
-const worldSide12 = readline.question("Type a world side ");
+var worldSide12 = readline.question("Type a world side ");
 switch (worldSide12) {
     case "south":
         console.log("на юг пойдешь счастье найдешь");
@@ -109,24 +109,24 @@ switch (worldSide12) {
 }
 //ADVANCED level
 // Task 1
-let a111 = 4;
-let b111 = 3;
+var a111 = 4;
+var b111 = 3;
 a111 = "" + a111 + "." + b111;
 b111 = parseInt(a111);
 a111 = (parseFloat(a111) * 10) % 4;
 // Task 2
-const result22 = readline.question("Type a result ");
-const minus = readline.question("How much to subtract? ");
-const plus = readline.question("How much to sum? ");
-const multiply = readline.question("How much to multiply? ");
-const divide = readline.question("How much to divide? ");
-console.log(`((((${result22} - ${minus}) + ${plus})) * ${multiply}) / ${divide} = ${(+(+result22 - +minus + +plus) * +multiply / +divide)}`);
+var result22 = readline.question("Type a result ");
+var minus = readline.question("How much to subtract? ");
+var plus = readline.question("How much to sum? ");
+var multiply = readline.question("How much to multiply? ");
+var divide = readline.question("How much to divide? ");
+console.log("((((".concat(result22, " - ").concat(minus, ") + ").concat(plus, ")) * ").concat(multiply, ") / ").concat(divide, " = ").concat((+(+result22 - +minus + +plus) * +multiply / +divide)));
 // Task 3
-const times = readline.question("Enter the final number of stars ");
-let i = 0;
+var times = readline.question("Enter the final number of stars ");
+var i = 0;
 while (i < times) {
-    let m = "#";
-    for (let k = 0; k < i; k++) {
+    var m = "#";
+    for (var k = 0; k < i; k++) {
         m += "#";
     }
     console.log(m);
