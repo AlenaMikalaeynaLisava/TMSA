@@ -80,42 +80,49 @@ console.log (typeof(a7) + "\n" + typeof(b7) + "\n" + typeof(c7) + "\n" + typeof(
 let a8 : number = 15;
 let b8 : number = 20;
 
-a8>b8?console.log(a8):console.log(b8);
+console.log(a8>b8?a8:b8);
 
 
 // Task 9
 
 for (let i=1; i<=20; i++){
-    if(! (i % 3)){
+    if(i % 3 == 0){
         console.log(i)
     }
 }
 
 
 // Task 10
+const readline = require("readline-sync");
+let keyInBag : string = readline.question("Type true if we have a key: ");
+let key : boolean = (keyInBag === 'true')?true:false
+let documentsInBag : string = readline.question("Type true if we have documents: ");
+let documents : boolean = (documentsInBag === 'true')?true:false
+let penInBag : string = readline.question("Type true if we have a pen: ");
+let pen : boolean = (penInBag === 'true')?true:false
+let appleInBag : string = readline.question("Type true if we have an apple: ");
+let apple : boolean = (appleInBag === 'true')?true:false
+let orangeInBag : string = readline.question("Type true if we have an orange: ");
+let orange : boolean = (orangeInBag === 'true')?true:false
+let shouldGoToWork: boolean = false;
 
-let key : boolean = true
-let documents : boolean = true
-let pen : boolean = true
-let apple : boolean = false
-let orange : boolean = true
-let shouldGoToWork: boolean;
 
 if( key && documents && pen && (apple || orange))
 shouldGoToWork = true;
 
 
+
 // Task 11
 
-const readline = require("readline-sync");
+
 const num11 = readline.question("Type a number:");
-if(!(num11 % 5) && !(num11 % 3)){
-    console.log("FizBuz");
-} else if(!(num11 % 5)){
-    console.log("Fiz");
-} else if(!(num11 % 3)){
-    console.log("Biz");
+let toType = '';
+if(num11 % 5 === 0){
+toType += "Fiz";}
+if(num11 % 3 === 0){
+toType += "Biz";
 }
+console.log(toType)
 
 
 // Task 12
@@ -160,9 +167,8 @@ switch(worldSide12){
 let a111 : number | string = 4;
 let b111 : number = 3;
 
-a111 = "" + a111 + "." + b111;
-b111 = parseInt(a111);
-a111 = (parseFloat(a111) * 10) %4;
+b111 = a111 - b111
+a111 = a111 - b111
 
 
 // Task 2
@@ -172,7 +178,11 @@ const minus = readline.question("How much to subtract? ");
 const plus = readline.question("How much to sum? ");
 const multiply = readline.question("How much to multiply? ");
 const divide = readline.question("How much to divide? ");
-console.log(`((((${result22} - ${minus}) + ${plus})) * ${multiply}) / ${divide} = ${(+(+result22 - +minus + +plus) * +multiply / +divide)}`)
+const difference = `${result22} - ${minus}`;
+const sum = `${difference} + ${plus}`;
+const mult = `${sum} * ${multiply}`;
+const result222 = `${(+(+result22 - +minus + +plus) * +multiply / +divide)}`
+console.log(`${mult} / ${divide} = ${result}`);
 
 
 // Task 3
@@ -180,11 +190,8 @@ console.log(`((((${result22} - ${minus}) + ${plus})) * ${multiply}) / ${divide} 
 const times = readline.question("Enter the final number of stars ");
 
 let i = 0;
-while (i<times) {
-    let m ="#"
-    for(let k=0; k<i; k++){
-   m += "#"
-    }
-    console.log(m);
-    i++;
+const stairSymb = '#';
+let toType11 = '';
+for(let k=0; k<times; k++){
+console.log(toType11 += stairSymb);
 }
