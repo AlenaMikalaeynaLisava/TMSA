@@ -4,8 +4,9 @@
 //Выведите приветсвие `Привет <Имя> <Фамилия>` 5 раз используя для каждого варианта разный регистр
 const readline1 = require("readline-sync");
 const fullName = readline1.question("Type your name and surname ");
-const name1 = fullName.split(' ')[0];
-const surname = fullName.split(' ')[1];
+const namesArr = fullName.split(' ');
+const name1 = namesArr[0];
+const surname = namesArr[1];
 
 if(name1 && surname){
     console.log(`Привет ${name1} ${surname}`);

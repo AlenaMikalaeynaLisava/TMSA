@@ -29,7 +29,7 @@ const readline = require("readline-sync");
 // Если закончились попытки, но ответ неправильный: "В этот раз как-то не удалось, заходите еще"
 
 let number = parseInt(readline.question("Введите цифру из меню: \n1. Калькулятор\n2. Предсказание\n3. Игра угадай\n"));
-if(number>3||number<1){
+while(number>3||number<1||isNaN(number)){
 console.clear();
 console.log("Неправильный ввод. Попробуйте еще раз");
 number = parseInt(readline.question("Введите цифру из меню: \n1. Калькулятор\n2. Предсказание\n3. Игра угадай\n"));
@@ -79,24 +79,25 @@ break;
     default :
     const stringDef = readline.question("Введите строку (от 5 до 15 символов) или число (от 5 до 15) ");
     if(!isNaN(+stringDef )){
-        const max = 15;
+        const max = +stringDef > 15 ? 15:+stringDef;
         const min =5;
         const randomN = Math.floor(Math.random()*(max-min))+min;
-        for (let i=0; i<Math.floor((max-min)/3); i++){
-            const guessNum = parseInt(readline.question("Угадайте число от 5 до 15 "));
+        const maxIter = Math.floor((max-min)/3);
+        for (let i=0; i<maxIter; i++){
+            const guessNum = parseInt(readline.question(`Угадайте число от 5 до ${max}`));
             if(+guessNum === randomN){
                 console.log("Поздравляем, Вы выиграли");
                 break
             }
             else{
-                if(i<(Math.floor((max-min)/3)-1))
+                if(i<(maxIter-1))
                 console.log("А вот и нет. Еще варианты?");
                 else console.log("Вы проиграли");
             }
         }
 
     } else {
-        const max = stringDef.length-1;
+        const max = stringDef.length-1 > 15 ? 15 : stringDef.length-1;
         const randomS = Math.floor(Math.random()*max);
         for (let i=0; i<Math.floor((max+1)/3); i++){
             const guessSymb = parseInt(readline.question("Угадайте символ из введенной строки "));
