@@ -27,7 +27,7 @@ const currencyRes = (resTax:number):string=>{
     const resres = resTax.toFixed(2);
     return resres+currency;
 }
-const totalPhonePurchaseCost =(taxF:Function, currencyRes:Function, accountBalance:number):string=>{
+const countTotalPhonePurchaseCost =(taxF:Function, currencyRes:Function, accountBalance:number):string=>{
 let amount = phonePrice+accessory;
 let resTax = taxF(amount, tax) + amount;
 const cur = resTax;
@@ -39,4 +39,4 @@ console.log(curT);
 return curT;
 }
 
-totalPhonePurchaseCost(taxF,currencyRes, 1000);
+countTotalPhonePurchaseCost(taxF,currencyRes, 1000);
