@@ -10,28 +10,18 @@
 const percentPerYear :number = 17;
 const years = 5;
 let yearcount :number =0;
-let money = 100;
+const money = 100;
+let wholeMoney :number=0;
 
 const getOverpayment = (credit:number, years:number):number=>{
-    credit = credit + credit*percentPerYear/100;
+let temp = credit + credit*percentPerYear/100
+credit = temp-temp/years;
+wholeMoney += temp/years;
 if(years == 1){
-    return credit - money;
+return wholeMoney
 }
 else {
-    return getOverpayment(credit, years-1);
+return getOverpayment(credit, years-1);
 }
 }
-console.log(getOverpayment(money, years));
-
-//Способ 2
-
-let sum : number =0;
-const overpayment = (credit:number) :number=>{
-sum = credit+ credit*percentPerYear/100;
-if(yearcount<years-1){
-yearcount++;
-overpayment(sum);
-} 
-return sum - money;
-}
-console.log(overpayment(money));
+getOverpayment(money, years);

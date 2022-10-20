@@ -4,8 +4,7 @@
 // если треугольник можно построить со сторонами заданной длины, и **false** в любом другом случае.
 
 const isTriangle = (a:number, b:number, c:number):boolean=>{
-    if((a+b>c)&&(a+c>b)&&(b+c>a)) return true
-    else return false
+    return (a+b>c)&&(a+c>b)&&(b+c>a);
 }
 
 console.log(isTriangle(2,3,1))
