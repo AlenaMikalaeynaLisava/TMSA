@@ -10,7 +10,7 @@
 //  нет шоколада для разделения). Ввод всегда будет неотрицательным целым числом.
 
 const divideChokolade = (n:number, m:number):number => {
- if(n>1 && m>1) return (n-1)+(m-1);
+ if(n>1 && m>1) return m*n - 1;
  return 0
 }
 

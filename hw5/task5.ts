@@ -19,13 +19,12 @@ while(a<=b){
     sum += a;
     a++
 }
-    } else if(b<a){
+    } else{
         while(b<=a){
             sum += b;
             b++
         }
-
-    }else sum = a;
+    }
 
     return sum;
 }

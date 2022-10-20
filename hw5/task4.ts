@@ -6,10 +6,10 @@
 //> Для 2021 это будет 5.
 
 const getSumNumbers = (num:number):number=>{
-    const arr = ("" + num).split("");
+    let string = ""+num;
     let summa:number = 0;
-    for (let i=0; i<arr.length; i++){
-        summa += +arr[i];
+    for (let i=0; i<string.length; i++){
+        summa += +string[i];
     }
     return summa;
 }

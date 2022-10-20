@@ -15,7 +15,7 @@ function foo():void{
     console.log("boo");
 }
 const fooboo = (boolValue : boolean, foo:Function, boo:Function):void=>{
-    boolValue === true?foo():boo();
+    boolValue ? foo():boo();
 }
 
 fooboo(false, foo, boo);
