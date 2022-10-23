@@ -9,10 +9,4 @@ const anyObject2 : object ={
     secondProperty: "secondProperty"
 };
 
-for (const i in anyObject2){
-    const key = i as keyof typeof anyObject2
-    if (key in anyObject2) console.log(true)
-}
-
-if("df" in anyObject2)console.log(true)
-    else console.log(false)
+console.log("df" in anyObject2)
