@@ -20,7 +20,6 @@ type Cat = {
  }
 
  const firstClone :Cat = { ...cat};
- //@ts-ignore
  const secondClone :Cat = JSON.parse(JSON.stringify(cat));// Здесь хотела сделать через structuredClone но в консоль упала ошибка
                                                           //const secondClone :Cat = structuredClone(cat);
                                                           //ReferenceError: structuredClone is not defined

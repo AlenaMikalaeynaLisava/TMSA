@@ -29,8 +29,7 @@
     for(const i in salaries){
         const key = i as keyof typeof salaries;
         wholeSalary += salaries[key];
-        numberOfPeople++;
     }
 
-    averageSalary = wholeSalary/numberOfPeople;
+    averageSalary = wholeSalary/Object.keys(salaries).length;
     console.log(averageSalary);

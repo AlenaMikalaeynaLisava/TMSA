@@ -10,10 +10,11 @@
 // Вывести в результате разницу в сумме, отдельно по каждой купюре 
 
 const obj = {1: 45, 2: 7, 5: 10, 10: 23, 20: 51, 50:0};
+const objectBeg = {...obj};
 const change1 = {2: 3, 5: 2, 20: 1};
 const change2 = {1: 4, 5: 1, 10: 2, 20: 1};
 const fifty = 50;
-const getObjSum = (obj:object, obj1:object):void=>{
+const getObjSum = (obj:object, obj1:object)=>{
     //@ts-ignore
     obj['50']=obj['50']+1;
     for (const i in obj){
@@ -23,7 +24,14 @@ const getObjSum = (obj:object, obj1:object):void=>{
             obj[key] = obj[key]-obj1[key];
         }
     }
-    console.log(obj);
+    return obj;
 }
-getObjSum(obj, change1);
-getObjSum(obj, change2);
+const resultFirst = getObjSum(obj, change1);
+const resultSecond =  getObjSum(obj, change2);
+
+for (const i in objectBeg){
+    //@ts-ignore
+    objectBeg[i] = -objectBeg[i]+obj[i]; // Опять не уверена, что правильно получилось. С минусо это то, что убыло, с + то, что прибыло.
+    // Может быть нужно было сдельь по модулю брать?
+}
+console.log(objectBeg);

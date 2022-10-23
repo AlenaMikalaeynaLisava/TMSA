@@ -17,6 +17,7 @@
     let student1 = {
         name: 'Polina',
         age: 27,
+        age1: 27,
     }
 
     let student2 = {
@@ -24,23 +25,14 @@
         age: 27,
     }
 const isEqual = (obj1:object, obj2:object)=>{
-    let firstKeyAmount =0;
-    let secondKeyAmount =0;
-    for (const i in obj2){
-        const key = i as keyof typeof obj2;
-        secondKeyAmount ++;
-    }
     for (const i in obj1){
         const key = i as keyof typeof obj1;
-        firstKeyAmount ++;
         if((!(key in obj2))||(obj1[key] !== obj2[key])){
-            console.log("Объекты не равны");   
-            return
+            return console.log("Объекты не равны");   
         }
     }
-    if(firstKeyAmount !== secondKeyAmount){
-        console.log("Объекты не равны");   
-        return
+    if(Object.keys(obj1).length !== Object.keys(obj2).length){
+        return console.log("Объекты не равны");    
     }
     console.log("Объекты равны");   
 }

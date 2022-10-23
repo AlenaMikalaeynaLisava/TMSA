@@ -33,8 +33,7 @@ const decipherЬatchКesult = (obj:MatchResultFormate):void=>{
     const maximumGoal = 9;
     const result = (obj.matchResult).split(":");
     if(+result[0] > maximumGoal || +result[1] > maximumGoal){
-        console.log("прислали неверные результаты");
-        return
+        return console.log("прислали неверные результаты");        
     }
     type resultObjType = {
         goals: string,
