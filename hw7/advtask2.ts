@@ -25,3 +25,15 @@
         } else  console.log("В массиве нет среднего значения, так как он имеет четное количество элементов")
         }
     
+//Наверное, имелось ввиду среднее арифметическое
+let result : number=0;
+for(const value of matrix){
+    let sum :number = 0;
+    for(const value1 of value){
+        sum += value1;
+        }
+        sum = sum/value.length;
+        result += sum;
+    }
+    result = result/matrix.length;
+    console.log(result);
