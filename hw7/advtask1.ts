@@ -9,7 +9,7 @@ const isPalindrome =(word:string):boolean=>{
     for (let i=0; i<halfLength; i++){
         if(arr[i]===arr[arr.length-1-i]) iterator++;
     }
-    return iterator===halfLength ? true:false
+    return iterator===halfLength
 }
 
 console.log(isPalindrome("asresa"));
