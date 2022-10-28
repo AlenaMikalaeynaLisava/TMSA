@@ -8,7 +8,7 @@
 import { ServerResponse } from "http";
 import { StringDecoder } from "string_decoder";
 const readline1 = require("readline-sync");
-const string = readline1.question("Type your name and surname ");
+const string = readline1.question("Type something ");
 
 const getResult = (string:string)=>{
     const arr = Array.from(string);
@@ -24,9 +24,7 @@ const getResult = (string:string)=>{
 const countQuantity = (string:string)=>{
     const arr = Array.from(string);
     return arr.reduce((sum:number, value:string|number)=>{
-        if(!isNaN(+value))
-        return sum + +value;
-        return sum
+        return !isNaN(+value)?sum + +value:sum
       }, 0);
 }
 

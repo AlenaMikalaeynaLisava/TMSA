@@ -15,8 +15,8 @@ const str1 = "aba";
 const str2 = "moOse";
 const isIsogram = (str:string)=>{
     const strTocheck = str.toLocaleUpperCase();
-const strSet = new Set(strTocheck);
-console.log(strTocheck.length === strSet.size);
+    const strSet = new Set(strTocheck);
+    console.log(strTocheck.length === strSet.size);
 }
 
 isIsogram(str);

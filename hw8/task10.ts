@@ -14,11 +14,9 @@ let elem2:string = "";
 let elem3:string = "";
 
 const changeElems = (arr:string[])=>{
-    if(arr[1]) elem2 = arr[1]
-        else elem2 = "bbb"
+    elem2 = arr[1]?arr[1]:"bbb"
 
-    if(arr[2]) elem3 = arr[2]
-    else elem3 = "eee"    
+    elem3 = arr[2]?arr[2]:"eee"
 }
 
 changeElems(arr2);
