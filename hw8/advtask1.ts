@@ -12,9 +12,7 @@ const createNewStr = (string:string)=>{
     const strArr = string.split("");
     const vowels = ["a", "e", "i", "o", "u"];
     const newArr = strArr.filter((item:string)=>{
-        const bol = vowels.every((it:string)=> it.toLocaleUpperCase() !== item.toLocaleUpperCase());
-        if(bol)
-        return item
+        return  !vowels.includes(item.toLocaleLowerCase())
      })
     
      console.log(newArr.join(''));

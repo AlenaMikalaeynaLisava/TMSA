@@ -31,10 +31,10 @@ let max =0;
 
 const calculateCand = (item:{name:string, reviews:Map<string, number>})=>{
     let result:number =0;
-    for (let key of reviewers.keys()) {
-        const rewRes = reviewers.get(key); 
-        const candRes = item.reviews.get(key);
-        if(rewRes&&candRes)
+    for (let entry of reviewers) {
+        const rewRes = entry[1]; 
+        const candRes = item.reviews.get(entry[0]);
+        if(candRes)
         result = result + rewRes*candRes;
         }
 
