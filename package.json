@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ES6": "npx tsc ts.ts --t ES6"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/AlenaMikalaeynaLisava/TMSA/issues"
   },
-  "homepage": "https://github.com/AlenaMikalaeynaLisava/TMSA#readme"
+  "homepage": "https://github.com/AlenaMikalaeynaLisava/TMSA#readme",
+  "dependencies": {
+    "@types/node": "^18.8.3",
+    "readline-sync": "^1.4.10"
+  }
 }
