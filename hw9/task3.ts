@@ -52,13 +52,8 @@ class Some{
         countSymb(this.str);
         return maxSymb
     };
-    // не понятно как быть с необязательным параметром 
-    // если его передать как   meth(?paramNum:number), то смысла нет, т.к. потом используем this.paramNum
-    // а если вот так meth(?this.paramNum), то ошибка
-    meth(){
-        const num = this.paramNum?this.classNum - this.paramNum:this.classNum;
-        //вот здесь наверняка можно придумать какую-то красивую функцию, потому что пишем практиыески
-        //одно и то же. Не могу придумать((
+    meth(paramNum?:number){
+        const num = paramNum?this.classNum - paramNum:this.classNum;
         if(num<0){
             const changeStr =  this.str.slice(0, num);
             const notchangeStr = this.str.slice(num);
@@ -75,4 +70,4 @@ class Some{
 
 const some = new Some("это строка", 5, 20);
 console.log(some.getSymb);
-console.log(some.meth());
+console.log(some.meth(some.paramNum));

@@ -24,21 +24,20 @@ class Strings {
     }
 
     get getSymNum(){
-        return this.str.includes(String(this.symNum))?this.symNum:"This string doesn't include SymNum"
-    }
-
-    returnSymb():string{
-    const randomIndex = Math.floor(Math.random()*(this.str.length-1));
-       return this.symNum>this.str.length?this.str[randomIndex]:""
+        const randomIndex = Math.floor(Math.random()*(this.str.length-1));
+        const sym = this.str[this.symNum];
+        if(sym) return sym
+        else return randomIndex 
     }
 
     returnStr(map:Map<string,string>):string{
+        let newStr = this.str;
         for (let entry of map) {
-            const value = map[1];
-            const regexp = new RegExp(map[0], "\g");
-            this.str = (this.str.includes(map[0])&& value)?this.str.replace(regexp, value):this.str
+            const value = entry[1];
+            const regexp = new RegExp(entry[0], "\g");
+            newStr = newStr.replace(regexp, value)
           }
-        return this.str
+        return newStr
     }
 }
 
@@ -47,5 +46,4 @@ const newStrings = new Strings("This is a 156 string445", 45, "5");
 const map = new Map([["is","-"],["15","er"]]);
 console.log(newStrings.isSym);
 console.log(newStrings.getSymNum);
-console.log(newStrings.returnSymb());
 console.log(newStrings.returnStr(map));
