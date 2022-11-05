@@ -48,7 +48,7 @@ const phone = new Phone(55,"phpne", "sony");
 
 const tv = new TV(555,"tv", "sams")
 
-// не понимаю как в функцию можно передать класс
+
 const func = (obj:TV|Phone)=>{    
     for (const i in obj){
         const key = i as keyof typeof obj
