@@ -8,35 +8,40 @@
 //         + Вывести полученный результат в консоль
 
 import fetch from 'node-fetch';
-const url1 = "https://jsonplaceholder.typicode.com/todos"
-const getTodos = async function(){
-    let response = await fetch(url1);
+const url1 = "https://jsonplaceholder.typicode.com/todos";
+//@ts-ignore
+const getTodos = async function(url:string):Promise<T>{
+
+    let response = await fetch(url);
     let result = await response.json();
     return result
   }
 
+  type Ress = {
+    id : number,
+    status : boolean
+}
+
+    type Ress1 =  {
+        userId: number,
+        id: number,
+        title: string,
+        completed: boolean
+      }
+
 
   const getTasks = async function(){
-    //@ts-ignore
-    const neArr = [];
+    const neArr:Ress[] = [];
 
-    let response = await getTodos();
+    let response = await getTodos(url1);
     console.log(response)
-    type Ress = {
-        id : number,
-        status : boolean
-    }
-    //@ts-ignore
-    response.forEach((item)=>{
+    response.forEach((item:Ress1)=>{
         const res:Ress = {
-             //@ts-ignore
             id : item.id,
-             //@ts-ignore
             status : item.completed
         };
         neArr.push(res)
     })
-    //@ts-ignore
     console.log(neArr)
   }
 getTasks()

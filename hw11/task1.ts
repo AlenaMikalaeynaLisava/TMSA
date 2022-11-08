@@ -45,4 +45,3 @@ async function showUser(item:number) {
 arr.forEach((item)=>{
     showUser(item)
 })
-
