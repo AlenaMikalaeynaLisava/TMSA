@@ -8,23 +8,24 @@
 // Проверить функцию на все 3 типа
 
 
-class NumberParser<T> {
-    param: T;
-        constructor(param: T) {
+class NumberParser {
+    param: boolean|number|string;
+        constructor(param:  boolean|number|string) {
         this.param = param;
     }
   
-    static parse(param:boolean|number|string):boolean|number|string|void {
+    static parse<T extends boolean|number|string>(param:T):boolean|number|string|void {
+       // let res:<T>;
         switch(typeof param) {
             case 'boolean':
                 return !param;
             case 'string':
-                return (param.includes("(")||param.includes(")"))?"не забыли ли закрыть скобку?":"скобок нет";            
+                return (param.includes("(")&&(!param.includes(")")))?"не забыли ли закрыть скобку?":"Все ок";            
             case 'number':
                 const num = Math.sqrt(param);
-                const minNum = Math.floor(num);
-                const maxNum = Math.ceil(num);
-                return Math.abs(minNum*minNum-param)<Math.abs(maxNum*maxNum-param)?Math.floor(num):Math.ceil(num);
+                
+                return Math.floor(num);
+               // return Math.abs(minNum*minNum-param)<Math.abs(maxNum*maxNum-param)?Math.floor(num):Math.ceil(num);
             default: 
               console.log("the type is different")
         }

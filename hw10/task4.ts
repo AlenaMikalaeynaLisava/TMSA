@@ -49,7 +49,7 @@ const phone = new Phone(55,"phpne", "sony");
 const tv = new TV(555,"tv", "sams")
 
 
-const func = (obj:TV|Phone)=>{    
+const func = (obj:IElectronics)=>{    
     for (const i in obj){
         const key = i as keyof typeof obj
         console.log(key);

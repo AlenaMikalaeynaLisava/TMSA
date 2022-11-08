@@ -5,8 +5,8 @@
 // К примеру `This car has 3 doors and this is left-hand drive car`
 
 class Cars{
-    doorsNumber:number;
-    wheelPosition:string;
+    private doorsNumber:number;
+    private wheelPosition:string;
     constructor(doorsNumber:number, wheelPosition:string){
         this.doorsNumber = doorsNumber;
         this.wheelPosition = wheelPosition;
