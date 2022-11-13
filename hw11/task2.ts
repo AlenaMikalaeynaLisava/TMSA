@@ -9,40 +9,28 @@
 
 import fetch from 'node-fetch';
 const url1 = "https://jsonplaceholder.typicode.com/todos";
-//@ts-ignore
-const getTodos = async function(url:string):Promise<T>{
 
-    let response = await fetch(url);
-    let result = await response.json();
-    return result
-  }
 
-  type Ress = {
-    id : number,
-    status : boolean
-}
-
-    type Ress1 =  {
-        userId: number,
-        id: number,
-        title: string,
-        completed: boolean
+type TToDo = {
+    userId: number,
+    id: number,
+    title: string,
+    completed: boolean
+    }
+    
+    const getTodos = async function(url:string){
+        let response = await fetch(url);
+        return  response.json() as Promise<TToDo[]>;
       }
 
 
-  const getTasks = async function(){
-    const neArr:Ress[] = [];
 
-    let response = await getTodos(url1);
-    console.log(response)
-    response.forEach((item:Ress1)=>{
-        const res:Ress = {
-            id : item.id,
-            status : item.completed
-        };
-        neArr.push(res)
-    })
-    console.log(neArr)
-  }
-getTasks()
- 
+    const getTasks = async function(userId: number, status: boolean) {
+        let response = await getTodos(url1);
+        response = response.filter(el => el.userId === userId && el.completed === status)
+        return response.map(el => {return {id: el.id, title: el.title}})
+    }
+
+    getTasks(1, true)
+    .then(res => console.log(res));
+
