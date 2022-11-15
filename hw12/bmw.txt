@@ -1,0 +1,2 @@
+    comfort = 40000, 
+    luxury = 80000
