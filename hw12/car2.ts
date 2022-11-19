@@ -1,11 +1,12 @@
-import {Car, FuelCost, brandEquipment} from "./car.js"
+import {Car} from "./car.js"
+import {FuelCost,brandEquipment} from "./enums.js"
 import *  as fs from 'fs';
 
 
 class NewCar extends Car{
-    fuelType:string;
+    private fuelType:string;
     private readonly carBrand:string="BMW";
-    fuelAmount?:number;
+    private fuelAmount?:number;
    constructor(public tankCapacity: number, public fuelConsumption: number, public fuelReserve: number, fuelType:string, fuelAmount?:number ){ 
        super();
        this.fuelType = fuelType;
@@ -14,16 +15,6 @@ class NewCar extends Car{
        }
    }
    
-   drive(dist:number): void{
-       let left = this.fuelReserve - this.fuelConsumption*dist/100;
-       while (left<0){
-           this.refuel();
-           left = this.fuelReserve - this.fuelConsumption*dist/100;
-       }
-   
-   };
-   // В методе `refuel` добавьте расчет суммы за топливо с учетом типа топлива и заправляемого объёма 
-//(до заправки в машине может оставаться топливо)
    refuel(){
     const type = this.fuelType;
     if(this.fuelAmount){
@@ -37,9 +28,8 @@ class NewCar extends Car{
     }       
    }
    getCost(){
-    const brand = this.carBrand;
-    const file = (brand==="BMW")?"hw12/bmw.txt": "hw12/audi.txt";
-    const complectation = brandEquipment[brand];
+    const file = 'hw12/'+this.carBrand.toLowerCase() + '.txt'
+    const complectation = brandEquipment[this.carBrand];
     let fileContent = fs.readFileSync(file, "utf8");
     if(!fileContent.includes(complectation))
     console.log("данного авто нет в продаже")

@@ -1,4 +1,5 @@
-import {Car, FuelCost,brandEquipment} from "./car.js"
+import {Car} from "./car.js"
+import {FuelCost,brandEquipment} from "./enums.js"
 import {Bills} from "./bills.js"
 import *  as fs from 'fs';
 
@@ -21,8 +22,8 @@ const bill = new Map([
 
 class NewCar1 extends Car{
     private readonly carBrand:string="Audi";
-    fuelType:string;
-    fuelAmount?:number;
+    private fuelType:string;
+    private fuelAmount?:number;
    constructor(public tankCapacity: number, public fuelConsumption: number, public fuelReserve: number, fuelType:string, fuelAmount?:number ){ 
        super();
        this.fuelType = fuelType;
@@ -31,14 +32,6 @@ class NewCar1 extends Car{
        }
    }
     
-   drive(dist:number): void{
-       let left = this.fuelReserve - this.fuelConsumption*dist/100;
-       while (left<0){
-           this.refuel();
-           left = this.fuelReserve - this.fuelConsumption*dist/100;
-       }
-      
-   };
    refuel(){
     const type = this.fuelType;
     if(this.fuelAmount){
@@ -52,9 +45,8 @@ class NewCar1 extends Car{
     }       
    };
    getCost():string{
-    const brand = this.carBrand;
-    const file = (brand==="BMW")?"hw12/bmw.txt": "hw12/audi.txt";
-    const complectation = brandEquipment[brand];
+    const file = 'hw12/'+this.carBrand.toLowerCase() + '.txt'
+    const complectation = brandEquipment[this.carBrand];
     const fileContent = fs.readFileSync(file, "utf8");
     if(!fileContent.includes(complectation))
     console.log("данного авто нет в продаже")

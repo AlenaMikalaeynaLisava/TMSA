@@ -16,19 +16,15 @@ export abstract class Car {
     abstract tankCapacity: number;
     abstract fuelConsumption: number;
     abstract fuelReserve:number;
-    drive(dist:number, fuelAmount?:number): void{
-    };
-}
-
-
-export enum FuelCost{
-    Gas=5, 
-    Gasoline=8, 
-    DieselFuel=9, 
-}
-
-export enum brandEquipment{
-    //BMW="comfort", 
-    BMW="simple", 
-    Audi="luxury"
+    refuel(){};
+    protected drive (distance: number) : void {
+        const fuelForDistance = (this.fuelConsumption*distance)/100;
+        while(fuelForDistance > this.fuelReserve) {
+            const distancePassed = this.fuelReserve / this.fuelConsumption * 100;
+            this.fuelReserve = 0;
+            this.refuel();//можно с параметром
+            this.drive(distance - distancePassed);
+        }
+        this.fuelReserve -= fuelForDistance;
+    }
 }
