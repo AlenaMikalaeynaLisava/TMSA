@@ -1,3 +1,4 @@
+window.onload = () => {
 const inputs = document.querySelectorAll('input[type=radio]');
 const tds = document.querySelectorAll('td');
 const h5 = document.querySelector('h5');
@@ -16,3 +17,4 @@ item.addEventListener('change', function(){
     p.innerText = tds[ind+1].innerText
 });
 })
+}

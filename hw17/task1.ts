@@ -55,16 +55,106 @@ function powUnit(arg1: any, arg2: any, expectedResult: any) {
     else throw new Error(`Test pow ${arg1}, ${arg2}, ${expectedResult} failed`)
 }
 
-sumUnit(5, 7, 12); 
-sumUnit('5', '7', '12'); 
-subtracUnit(-5, 7, 2);
-subtracUnit(5.6, -5.6, '0');
-multiplyUnit(1000, 5000, 1);
-multiplyUnit(-3, 0.3, -0.9);
-divideUnit('gh', 7, 'gh/7');
-divideUnit(15, 3, 5);
-powUnit(-3, -3, -27);
-powUnit(5, -2, 0.025);
+try {
+    sumUnit(5, 7, 12);
+  
+  } catch(err) {
+    console.log(err)
+  }
+  
+  try {
+    sumUnit('5', '7', "arguments should be numbers"); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+  try {
+    sumUnit('6', 7, "arguments should be numbers"); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+
+  try {
+    subtracUnit(-5, 7, -12);
+  
+  } catch(err) {
+    console.log(err)
+  }
+  
+  try {
+    subtracUnit('5', '-7', "arguments should be numbers"); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+  try {
+    subtracUnit('6', false, "arguments should be numbers"); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+ 
+  try {
+    multiplyUnit('5', '-7', '35'); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+  try {
+    multiplyUnit('6', NaN, 'arguments should be numbers'); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+
+  try {
+    divideUnit(35, 7, 5); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+  try {
+    divideUnit(false, 5, 'arguments should be numbers'); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+
+  try {
+    powUnit(3, 1, 3); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+  try {
+    powUnit(3, "1", 'arguments should be numbers'); 
+  
+  } catch(err) {
+  
+    console.log(err)
+  
+  }
+
+
 
 
 
