@@ -57,101 +57,75 @@ function powUnit(arg1: any, arg2: any, expectedResult: any) {
 
 try {
     sumUnit(5, 7, 12);
-  
   } catch(err) {
     console.log(err)
   }
   
   try {
-    sumUnit('5', '7', "arguments should be numbers"); 
-  
+    sumUnit('5', '7', "arguments should be numbers");  
   } catch(err) {
-  
-    console.log(err)
-  
+    console.log(err) 
   }
+
   try {
     sumUnit('6', 7, "arguments should be numbers"); 
   
   } catch(err) {
-  
-    console.log(err)
-  
+    console.log(err) 
   }
 
   try {
-    subtracUnit(-5, 7, -12);
-  
+    subtracUnit(-5, 7, -12); 
   } catch(err) {
     console.log(err)
   }
   
   try {
-    subtracUnit('5', '-7', "arguments should be numbers"); 
-  
-  } catch(err) {
-  
-    console.log(err)
-  
+    subtracUnit('5', '-7', "arguments should be numbers");   
+  } catch(err) { 
+    console.log(err)  
   }
+
   try {
-    subtracUnit('6', false, "arguments should be numbers"); 
-  
-  } catch(err) {
-  
-    console.log(err)
-  
+    subtracUnit('6', false, "arguments should be numbers");  
+  } catch(err) { 
+    console.log(err)  
   }
  
   try {
-    multiplyUnit('5', '-7', '35'); 
-  
-  } catch(err) {
-  
-    console.log(err)
-  
-  }
-  try {
-    multiplyUnit('6', NaN, 'arguments should be numbers'); 
-  
-  } catch(err) {
-  
-    console.log(err)
-  
+    multiplyUnit('5', '-7', '35');   
+  } catch(err) {  
+    console.log(err)  
   }
 
   try {
-    divideUnit(35, 7, 5); 
-  
-  } catch(err) {
-  
-    console.log(err)
-  
-  }
-  try {
-    divideUnit(false, 5, 'arguments should be numbers'); 
-  
-  } catch(err) {
-  
-    console.log(err)
-  
+    multiplyUnit('6', NaN, 'arguments should be numbers');  
+  } catch(err) {  
+    console.log(err)  
   }
 
   try {
-    powUnit(3, 1, 3); 
-  
-  } catch(err) {
-  
-    console.log(err)
-  
+    divideUnit(35, 7, 5);   
+  } catch(err) {      
+    console.log(err)  
   }
+
   try {
-    powUnit(3, "1", 'arguments should be numbers'); 
-  
-  } catch(err) {
-  
-    console.log(err)
-  
+    divideUnit(false, 5, 'arguments should be numbers');   
+  } catch(err) { 
+    console.log(err) 
+  }
+
+  try {
+    powUnit(3, 1, 3);   
+  } catch(err) { 
+    console.log(err) 
+  }
+
+  try {
+    powUnit(3, "1", 'arguments should be numbers');   
+  } catch(err) { 
+    console.log(err) 
   }
 
 
