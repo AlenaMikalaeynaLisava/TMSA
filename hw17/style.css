@@ -1,0 +1,41 @@
+/* #### Task 3 💻
+Добавить отдельный css файл и отформатировать таблицу в похожем стиле
+Селектор для четных строк: tbody tr:nth-of-type(2n)
+Селектор для нечетных строк: tbody tr:nth-of-type(2n+1) */
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FCDD08;
+}
+.h1{
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+.main_table{
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    text-align: center;
+    word-wrap: normal;
+}
+.main_table thead{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+.main_table tbody tr:nth-of-type(2n){
+    background-color: #DDD6D5;
+}
+.main_table tbody tr:nth-of-type(2n+1){
+    background-color: #ADA3A1;
+}
+.main_table ul{
+    list-style: none;
+    padding-inline-start: 0px;
+}
+.main_table ul li{
+    /* margin-right: 30px; */
+    text-align: center;
+}
