@@ -25,6 +25,8 @@ async function func5() {
         }
         func6(element);
     })
+    // закомментила выход из окна, иначе выходит моментально и никакая задержка типа await driver.manage().setTimeouts({implicit:50000}); не помогает
+   //driver.quit();
 }
 func5();
 
