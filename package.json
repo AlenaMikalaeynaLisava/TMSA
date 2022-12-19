@@ -2,7 +2,7 @@
   "name": "tmsa",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/AlenaMikalaeynaLisava/TMSA#readme",
   "dependencies": {
-    "@types/node": "^18.11.9",
-    "node-fetch": "^3.2.10"
+    "@types/node": "^18.11.15",
+    "@types/selenium-webdriver": "^4.1.9",
+    "chromedriver": "^108.0.0",
+    "node-fetch": "^3.2.10",
+    "selenium-webdriver": "^4.7.1"
   }
 }
