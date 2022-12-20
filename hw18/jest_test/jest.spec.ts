@@ -42,7 +42,7 @@ describe("check getAllSubStrIndex", function(){
   })
   it("result if substr is not a string", function() {
     const string1 = new StringOperation("3476");
-    expect(string1.getAllSubStrIndex(4 as any)).toThrow(new Error("this is not a string value"))
+    expect(() => string1.getAllSubStrIndex(4 as any)).toThrow(new Error("this is not a string value"))
   })
   it("arr length shoul be 3", function() {
     const string1 = new StringOperation("e3rtye3hje3");
