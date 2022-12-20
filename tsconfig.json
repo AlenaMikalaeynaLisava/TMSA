@@ -10,7 +10,6 @@
     "forceConsistentCasingInFileNames": true, 
     "strict": true, 
     "strictFunctionTypes": true, 
-    
   },
   "ts-node": {"esm": true}
 }
